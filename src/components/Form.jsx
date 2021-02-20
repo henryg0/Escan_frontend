@@ -25,7 +25,7 @@ class Form extends React.Component {
 
   handleSubmit = (e) => {
     const student = this.state;
-    
+    // validate input here
     axios.post('https://escan-backend.herokuapp.com/Students/create', student)
       .then (res => console.log(res.data))
       .catch (e => console.log(e));
@@ -68,6 +68,12 @@ class Form extends React.Component {
     })
   }
 
+  eraseSelection = (e) => {
+    if (e.keyCode != 8) {
+      e.preventDefault();
+    }
+  }
+  
   handleYearChange = (e) => {
     this.setState( {
       year: e.target.value
@@ -112,7 +118,13 @@ class Form extends React.Component {
 
           <br />
           <p>Select your major</p>
-          <input list="majors" id="major-choice" name="major-choice" onChange={this.handleMajorChange}/>
+          <input 
+          list="majors" 
+          id="major-choice" 
+          name="major-choice"
+          onChange={this.handleMajorChange} 
+          onKeyDown={this.eraseSelection}
+          />
           <datalist id="majors">
             /* add more */
             <Major 
