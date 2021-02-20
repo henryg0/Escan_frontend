@@ -1,0 +1,62 @@
+button {
+  height:2.25rem;
+  width:10rem;
+  background-color:rgb(245, 217, 222);
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size:1.5rem;
+  border-radius:100px;
+  margin-bottom:10rem;
+}
+input {
+  background-color:powderblue;
+  width:18rem;
+  height:2.75rem;
+  text-align:center;
+  font-family:'Montserrat Alternates';
+  border-color:white;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  color:rgb(187, 58, 10);
+  font-size:0.85rem;
+  position:relative;
+}
+
+.App {
+  text-align: center;
+}
+
+.heading {
+  font-family: 'Righteous', cursive;
+  color:white;
+  font-size: 3rem;
+  font-weight:lighter;
+}
+
+.raffle {
+  margin: 0 auto;
+  column-count: 2;
+  column-gap: 0px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size:1.25rem;
+  color:white;
+}
+
+.raffleCheck {
+  position:relative;
+  width:1.5rem;
+  height:1.5rem;
+  margin-top:1rem;
+}
+
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  text-align: center;  
+}
