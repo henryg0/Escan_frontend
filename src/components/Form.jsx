@@ -26,7 +26,7 @@ class Form extends React.Component {
   handleSubmit = (e) => {
     const student = this.state;
     
-    axios.post('http://localhost:5000/Students/create', student)
+    axios.post('https://escan-backend.herokuapp.com/Students/create', student)
       .then (res => console.log(res.data))
       .catch (e => console.log(e));
     
