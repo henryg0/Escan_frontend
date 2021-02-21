@@ -108,7 +108,7 @@ class Form extends React.Component {
             placeholder="email"
             onChange = {this.handleEmailChange}>
           </input>
-          <p>Select your major</p>
+          <p>Select your major:</p>
           <input 
           list="majors" 
           id="major-choice" 
@@ -150,7 +150,7 @@ class Form extends React.Component {
           </datalist>
 
           <br />
-          <p>Select your class</p>
+          <p>Select your class:</p>
           <input list="years" id="year-choice" name="year-choice" onChange={this.handleYearChange} onKeyDown={this.eraseSelection}/>
           <datalist id="years">
             /* add more */
@@ -172,7 +172,7 @@ class Form extends React.Component {
           </datalist>
           
           <p>Enter your address</p>
-          <p>(Address, City State, Zip)</p>
+          <p>(Address, City State, Zip):</p>
           <input
             placeholder="address"
             onChange = {this.handleAddressChange}>
