@@ -4,13 +4,6 @@ body {
   color:white;
 }
 
-p {
-  max-width: 20rem;
-  margin:0 auto;
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
-
 button {
   height:2.25rem;
   width:10rem;
@@ -21,6 +14,7 @@ button {
   border-radius:100px;
   margin-bottom:10rem;
 }
+
 input {
   background-color:powderblue;
   width:18rem;
@@ -35,15 +29,30 @@ input {
   position:relative;
 }
 
+input::-webkit-calendar-picker-indicator {
+  opacity: 100;
+  /* color:#947b0b; */
+  color: #1b53ad;
+}
+
 .App {
   text-align: center;
 }
 
+.form p {
+  max-width: 20rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align:left;
+}
+
 .heading {
-  font-family: 'Righteous', cursive;
+  font-family: 'Righteous';
   color:white;
   font-size: 3rem;
   font-weight:lighter;
+  margin-bottom:0;
 }
 
 .raffle {

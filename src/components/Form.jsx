@@ -4,25 +4,23 @@ import './App.css';
 import Heading from "./Heading";
 import Major from './Major';
 import Year from "./Year";
+import Ending from './Ending';
 
 class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       heading : "Hey,",
-      welcome : "Welcome to E-Week!",
+      welcome : "Welcome to ESO Showcase!",
       name : "",
       email : "",
-      phoneNumber:"",
       address : "",
-      city: "",
-      state: "",
-      zip: "",
       major : "",
       year : "",
       enteredRaffle : false,
       showName: true,
-      getData : []
+      getData : [],
+      ending: ""
     }
   }
 
@@ -33,9 +31,13 @@ class Form extends React.Component {
       .then (res => console.log(res.data))
       .catch (e => console.log(e));
     
+    this.setState( {
+      ending: "Thanks for entering the raffle, " + this.state.name + "!"
+    })
+    
     console.log(this.state);
     this.setState( {
-        heading: "Submitted!",
+        heading: "",
         name: "",
         showName: false
       })
@@ -54,32 +56,9 @@ class Form extends React.Component {
     })
   }
 
-  handlePhoneNumberChange = (e) => {
-    this.setState( {
-      phoneNumber : e.target.value
-    })
-  }
-
   handleAddressChange = (e) => {
     this.setState( {
       address: e.target.value
-    })
-  }
-
-  handleCityChange = (e) => {
-    this.setState( {
-      city : e.target.value
-    })
-  }
-  
-  handleStateChange = (e) => {
-    this.setState( {
-      state : e.target.value
-    })
-  }
-  handleZipChange = (e) => {
-    this.setState( {
-      zip : e.target.value
     })
   }
 
@@ -117,46 +96,20 @@ class Form extends React.Component {
         showName={this.state.showName} />
       
         <form 
+        className="form"
         onSubmit={this.handleSubmit}
         autoComplete="off"
         >
-          <p>Enter your full name</p>
+          <p>Enter your full name:</p>
           <input 
             placeholder="full name"
             onChange={this.handleNameChange}>
           </input>
           <br />
-          <p>Enter your email</p>
+          <p>Enter your UCI email:</p>
           <input
             placeholder="email"
             onChange = {this.handleEmailChange}>
-          </input>
-          <br />
-          <p>Enter your phone number (ZZZ) ZZZ-ZZZZ</p>
-          <input
-            placeholder="phone number"
-            onChange = {this.handlePhoneNumberChange}>
-          </input>
-          <p>Enter your address</p>
-          <input
-            placeholder="address!"
-            onChange = {this.handleAddressChange}>
-          </input>
-          <p>Enter your city</p>
-          <input
-            placeholder="city"
-            onChange = {this.handleCityChange}>
-          </input>
-          <p>Enter your state</p>
-          <input
-            placeholder="state"
-            onChange = {this.handleStateChange}>
-          </input>
-          
-          <p>Enter your zip code</p>
-          <input
-            placeholder="address!"
-            onChange = {this.handleZipChange}>
           </input>
           <p>Select your major</p>
           <input 
@@ -167,15 +120,13 @@ class Form extends React.Component {
           onKeyDown={this.eraseSelection}
           />
           <datalist id="majors">
+            <select>
             /* add more */
             <Major 
               major="Aerospace Engineering"
             />
             <Major
               major="Biomedical Engineering"
-            />
-            <Major
-              major="Computer Engineering"
             />
             <Major
               major="Civil Engineering"
@@ -198,7 +149,7 @@ class Form extends React.Component {
             <Major
               major="Mechanical Engineering"
             />
-
+          </select>
           </datalist>
 
           <br />
@@ -223,7 +174,15 @@ class Form extends React.Component {
             />
           </datalist>
           
+          <p>Enter your address</p>
+          <p>(Address, City State, Zip)</p>
+          <input
+            placeholder="address"
+            onChange = {this.handleAddressChange}>
+          </input>
+
           <br />
+          {/*
           <table className="raffle">
             <tbody>
               <tr>
@@ -232,8 +191,10 @@ class Form extends React.Component {
               </tr>
             </tbody>
           </table>
+          */}
           <button onSubmit = {this.handleSubmit}>Submit</button>
           </form>
+        <Ending />
         </div>
     )
   }
