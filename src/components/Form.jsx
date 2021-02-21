@@ -34,7 +34,7 @@ class Form extends React.Component {
     this.setState( {
       ending: "Thanks for entering the raffle, " + this.state.name + "!"
     })
-    
+
     console.log(this.state);
     this.setState( {
         heading: "",
@@ -194,7 +194,8 @@ class Form extends React.Component {
           */}
           <button onSubmit = {this.handleSubmit}>Submit</button>
           </form>
-        <Ending />
+        <Ending 
+        ending={this.state.ending}/>
         </div>
     )
   }
