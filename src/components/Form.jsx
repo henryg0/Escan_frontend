@@ -172,7 +172,7 @@ class Form extends React.Component {
           </datalist>
           
           <p>Enter your address</p>
-          <p>(Address, City State, Zip):</p>
+          <p>(Street, City, State Zip):</p>
           <input
             placeholder="address"
             onChange = {this.handleAddressChange}>
