@@ -1,7 +1,21 @@
+body {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size:1.25rem;
+  color:white;
+}
+
+p {
+  max-width: 20rem;
+  margin:0 auto;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
 button {
   height:2.25rem;
   width:10rem;
-  background-color:rgb(245, 217, 222);
+  background-color: #ffd200;
+  /* background-color:rgb(245, 217, 222);*/
   font-family: 'Montserrat Alternates', sans-serif;
   font-size:1.5rem;
   border-radius:100px;
@@ -36,9 +50,6 @@ input {
   margin: 0 auto;
   column-count: 2;
   column-gap: 0px;
-  font-family: 'Montserrat Alternates', sans-serif;
-  font-size:1.25rem;
-  color:white;
 }
 
 .raffleCheck {

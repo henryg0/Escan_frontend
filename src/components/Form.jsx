@@ -14,8 +14,11 @@ class Form extends React.Component {
       name : "",
       email : "",
       phoneNumber:"",
-      major : "",
       address : "",
+      city: "",
+      state: "",
+      zip: "",
+      major : "",
       year : "",
       enteredRaffle : false,
       showName: true,
@@ -30,6 +33,7 @@ class Form extends React.Component {
       .then (res => console.log(res.data))
       .catch (e => console.log(e));
     
+    console.log(this.state);
     this.setState( {
         heading: "Submitted!",
         name: "",
@@ -61,7 +65,24 @@ class Form extends React.Component {
       address: e.target.value
     })
   }
+
+  handleCityChange = (e) => {
+    this.setState( {
+      city : e.target.value
+    })
+  }
   
+  handleStateChange = (e) => {
+    this.setState( {
+      state : e.target.value
+    })
+  }
+  handleZipChange = (e) => {
+    this.setState( {
+      zip : e.target.value
+    })
+  }
+
   handleMajorChange = (e) => {
     this.setState( {
       major: e.target.value
@@ -95,28 +116,48 @@ class Form extends React.Component {
         welcome={this.state.welcome}
         showName={this.state.showName} />
       
-        <form onSubmit={this.handleSubmit}>
+        <form 
+        onSubmit={this.handleSubmit}
+        autoComplete="off"
+        >
+          <p>Enter your full name</p>
           <input 
-            placeholder="Enter your full name!"
+            placeholder="full name"
             onChange={this.handleNameChange}>
           </input>
           <br />
+          <p>Enter your email</p>
           <input
-            placeholder="Enter your email!"
+            placeholder="email"
             onChange = {this.handleEmailChange}>
           </input>
           <br />
+          <p>Enter your phone number (ZZZ) ZZZ-ZZZZ</p>
           <input
-            placeholder="Enter your phone number!"
+            placeholder="phone number"
             onChange = {this.handlePhoneNumberChange}>
           </input>
-          <br />
+          <p>Enter your address</p>
           <input
-            placeholder="Enter your address!"
+            placeholder="address!"
             onChange = {this.handleAddressChange}>
           </input>
-
-          <br />
+          <p>Enter your city</p>
+          <input
+            placeholder="city"
+            onChange = {this.handleCityChange}>
+          </input>
+          <p>Enter your state</p>
+          <input
+            placeholder="state"
+            onChange = {this.handleStateChange}>
+          </input>
+          
+          <p>Enter your zip code</p>
+          <input
+            placeholder="address!"
+            onChange = {this.handleZipChange}>
+          </input>
           <p>Select your major</p>
           <input 
           list="majors" 
@@ -162,7 +203,7 @@ class Form extends React.Component {
 
           <br />
           <p>Select your class</p>
-          <input list="years" id="year-choice" name="year-choice" onChange={this.handleYearChange}/>
+          <input list="years" id="year-choice" name="year-choice" onChange={this.handleYearChange} onKeyDown={this.eraseSelection}/>
           <datalist id="years">
             /* add more */
             <Year
