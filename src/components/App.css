@@ -39,6 +39,9 @@ input::-webkit-calendar-picker-indicator {
   text-align: center;
 }
 
+.form {
+  height:35rem;
+}
 .form p {
   max-width: 20rem;
   margin: 0 auto;

@@ -8,7 +8,7 @@ class Ending extends React.Component {
   render() {
     return (
       <div>
-        <h1>{this.props.ending}</h1>
+        <h1>Submission Status: {this.props.ending}</h1>
       </div>
     )
   }

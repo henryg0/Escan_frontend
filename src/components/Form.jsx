@@ -5,6 +5,7 @@ import Heading from "./Heading";
 import Major from './Major';
 import Year from "./Year";
 import Ending from './Ending';
+import pic from './12.jpg';
 
 class Form extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class Form extends React.Component {
       enteredRaffle : false,
       showName: true,
       getData : [],
-      ending: ""
+      ending: "Not Yet Submitted"
     }
   }
 
@@ -28,19 +29,15 @@ class Form extends React.Component {
     const student = this.state;
     // validate input here
     axios.post('https://escan-backend.herokuapp.com/Students/create', student)
-      .then (res => console.log(res.data))
+      .then ((res) => {
+        console.log('res: ' + res.data);
+        console.log(student);
+        this.setState( {
+          ending: "Submitted!"
+        });
+      })
       .catch (e => console.log(e));
     
-    this.setState( {
-      ending: "Thanks for entering the raffle, " + this.state.name + "!"
-    })
-
-    console.log(this.state);
-    this.setState( {
-        heading: "",
-        name: "",
-        showName: false
-      })
     e.preventDefault();
   }
 
@@ -93,7 +90,7 @@ class Form extends React.Component {
         heading={this.state.heading}
         name={this.state.name}
         welcome={this.state.welcome}
-        showName={this.state.showName} />
+        />
       
         <form 
         className="form"
