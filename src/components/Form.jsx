@@ -5,7 +5,7 @@ import Heading from "./Heading";
 import Major from './Major';
 import Year from "./Year";
 import Ending from './Ending';
-import pic from './12.jpg';
+import Select from 'react-select';
 
 class Form extends React.Component {
   constructor(props) {
@@ -28,6 +28,7 @@ class Form extends React.Component {
   handleSubmit = (e) => {
     const student = this.state;
     // validate input here
+    console.log(this.state)
     axios.post('https://escan-backend.herokuapp.com/Students/create', student)
       .then ((res) => {
         console.log('res: ' + res.data);
@@ -108,46 +109,10 @@ class Form extends React.Component {
             placeholder="email"
             onChange = {this.handleEmailChange}>
           </input>
+
           <p>Select your major:</p>
-          <input 
-          list="majors" 
-          id="major-choice" 
-          name="major-choice"
-          onChange={this.handleMajorChange} 
-          onKeyDown={this.eraseSelection}
-          />
-          <datalist id="majors">
-            <select>
-            /* add more */
-            <Major 
-              major="Aerospace Engineering"
-            />
-            <Major
-              major="Biomedical Engineering"
-            />
-            <Major
-              major="Civil Engineering"
-            />
-            <Major
-              major="Computer Engineering"
-            />
-            <Major
-              major="Computer Science and Engineering"
-            />
-            <Major
-              major="Electrical Engineering"
-            />
-            <Major
-              major="Environmental Engineering"
-            />
-            <Major
-              major="Material Science and Engineering"
-            />
-            <Major
-              major="Mechanical Engineering"
-            />
-          </select>
-          </datalist>
+          <Major 
+          className="major-selection"/>
 
           <br />
           <p>Select your class:</p>

@@ -37,6 +37,7 @@ input::-webkit-calendar-picker-indicator {
 
 .App {
   text-align: center;
+  visibility: visible;
 }
 
 .form {
@@ -82,4 +83,18 @@ input::-webkit-calendar-picker-indicator {
 
 ::-moz-placeholder {  /* Firefox 19+ */
   text-align: center;  
+}
+
+.major-selection {
+  background-color:powderblue;
+  width:19rem;
+  height:3rem;
+  text-align:center;
+  font-family:'Montserrat Alternates';
+  border-color:white;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  border-width:2px;
+  color:rgb(187, 58, 10);
+  font-size:0.85rem;
 }
