@@ -6,26 +6,32 @@ const options = [
   { 
     value:'Aero', label: 'Aerospace Engineering',
   },
-  { 
-    value:'CPE', label: 'Computer Engineering',
+  {
+    value:'BME', label: 'Biomedical Engineering',
+  },
+  {
+    value:'ChE', label: 'Chemical Engineering',
   },
   { 
     value:'Civil', label: 'Civil Engineering',
   },
   { 
+    value:'CPE', label: 'Computer Engineering',
+  },
+  { 
     value:'CSE', label: 'Computer Science & Engineering',
   },
   { 
-    value:'Aero', label: 'Aerospace',
+    value:'Enviro', label: 'Environmental Engineering',
   },
   { 
-    value:'CPE', label: 'SEW',
+    value:'EE', label: 'Electrical Engineering',
   },
   { 
-    value:'Aero', label: 'Aerospace',
+    value:'MSE', label: 'Materials Science & Engineering',
   },
   { 
-    value:'CPE', label: 'SEW',
+    value:'ME', label: 'Mechanical Engineering',
   },
 ]
 
@@ -69,8 +75,8 @@ const styles = {
   option: (base) => ({
     ...base,
     color: 'black',
-    backgroundColor: 'orange',
-    height: '4rem'
+    backgroundColor: 'powderblue',
+    height: 'auto'
   }),
   placeholder: (base) => {
     return {
