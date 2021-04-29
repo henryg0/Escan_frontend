@@ -16,7 +16,7 @@ class Form extends React.Component {
       name : "",
       email : "",
       address : "",
-      major : "",
+      major : "Mechanical Engineering",
       year : "",
       enteredRaffle : false,
       showName: true,
